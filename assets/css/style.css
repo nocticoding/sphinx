@@ -1,0 +1,131 @@
+:root {
+    --main-bg-color: #f2f2f2;
+    --main-contrast-color: #0096A1;
+    --first-button-color: #F39200;
+    --second-button-color: #0096A1;
+    --third-button-color: #D60B52;
+    --main-font-color: #575756;
+    --subtitle-font-color: #B0A29A;
+    --correct-answer-color: #3AAA35;
+    --muted-answer: #878787;
+    --wrong-answer: #E30613;
+}
+
+.hide {
+    display: none!important;
+}
+.flex {
+    display: flex;
+}
+html {
+    background-color: var(--main-bg-color);
+}
+
+body{
+    font-size: 20px;
+    font-family: sans-serif;
+    color: var(--main-font-color);
+    text-align: center;
+    background-color: unset;
+    }
+
+header{
+    display: flex;
+    justify-content: right;
+    color: var(--main-font-color);
+}
+.header-container {
+    display: flex;
+    flex-direction: column;
+
+}
+.museum-name {
+    display: flex;
+    justify-content: right;
+    text-align: right;
+    flex-direction: column;
+
+}
+.museum-name span{
+    color:var(--main-contrast-color);
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--main-contrast-color);
+}
+.logo-container {
+
+}
+#language-container,
+#selector-container {
+    display: flex;
+    justify-content: space-evenly;
+    color: var(--main-font-color);
+    text-transform: uppercase;
+    margin-top: 3rem;
+
+}
+
+#language-container .round,
+#selector-container .round {
+    width: 2.5vw;
+    height: 2.5vw;
+    padding: 2.5vw;
+    border-radius: 5vw;
+    margin-bottom: 2rem;
+}
+#language-1-container,
+#option-1-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#language-2-container,
+#option-2-container  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#language-3-container,
+#option-3-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#language-1-container .round,
+#option-1-container .round {
+    background-color: var(--first-button-color);
+}
+#language-2-container .round,
+#option-2-container .round  {
+    background-color: var(--second-button-color);
+}
+#language-3-container .round,
+#option-3-container .round {
+    background-color: var(--third-button-color);
+}
+
+
+#language-1-container span,
+#option-1-container span {
+    border-top: 2px solid var(--first-button-color);
+    color: var(--first-button-color);
+    text-transform: initial;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    
+}
+#language-2-container span,
+#option-2-container span  {
+    border-top: 2px solid var(--second-button-color);
+    color: var(--second-button-color);
+    text-transform: initial;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+#language-3-container span,
+#option-3-container span {
+    border-top: 2px solid var(--third-button-color);
+    color: var(--third-button-color);
+    text-transform: initial;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}

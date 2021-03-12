@@ -5,11 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS Quiz</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Bahiana|Barrio" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/all.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <h1>Preguntas y Respuestas</h1>
+    <header>
+        <div class="header-container">
+            <div class="museum-name">Centro de Identidad<span>Cultura <br />Sefardí</span></div>
+            <div class="logo-container"><img src="" alt="logo1" /><img src="" alt="logo2" /></div>
+        </div>
+        <img src="./assets/images/log.png" alt="logo-museo"/>
+    </header>
+    <div id="language-container">
+        <div id="language-1-container"><div class="round"></div>¿CUÁNTO SABES<br /> DE LA CULTURA <br />SEFARDÍ? <span>Comienza <br />el juego</span></div>
+        <div id="language-2-container"><div class="round"></div>HOW MUCH DO <br />YOU KNOW ABOUT<br /> SEPHARDI CULTURE? <span>Starts <br />the game</span></div>
+        <div id="language-3-container"><div class="round"></div>O QUE SABES <br />SOBRE A CULTURA<br /> SEFARDITA? <span>Começa <br />o jogo</span></div>
+    </div>
+    <div id="selector-container" class="hide">
+        <div id="question-text"></div>
+        <div id="option-1-container"><div class="round"></div></div>
+        <div id="option-2-container"><div class="round"></div></div>
+        <div id="option-3-container"><div class="round"></div></div>
+        <div id="answer" class="hide"></div>
+    </div>
+
+    <!-- <h1>Preguntas y Respuestas</h1>
     <div class="quiz-container">
         <div id="quiz"></div>
     </div>
@@ -19,8 +40,8 @@
     <button id="previous">Anterior</button>
     <button id="next">Siguiente</button>
     <button id="submit">Enviar</button>
-    <div id="results"></div>
+    <div id="results"></div> -->
 
-    <script src="main.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
 </body>
 </html>
