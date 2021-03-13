@@ -64,6 +64,17 @@ header{
 
 }
 
+#selector-container {
+    flex-direction: column;
+}
+
+.selection-wrapper {
+    display: inline-flex;
+    margin: 0 auto;
+}
+.selection-wrapper > div {
+    margin: 2rem 3rem;
+}
 #language-container .round,
 #selector-container .round {
     width: 2.5vw;
@@ -128,4 +139,50 @@ header{
     text-transform: initial;
     margin-top: 1rem;
     padding-top: 1rem;
+}
+
+.checkmark{
+    position:relative;
+    display:inline-block;
+}
+.checkmark:after{
+    content: '';
+    display: block;
+    width: 20px;
+    height: 40px;
+    border: solid #090;
+    border-width: 0 15px 15px 0;
+    transform: rotate(45deg);
+    }
+  
+.crossmark{
+    margin-top:-30px;
+    margin-right:40px;
+    position:relative;
+    display:inline-block;
+}
+
+.crossmark:after{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 60px;
+    height: 0px;
+    border: solid #E00;
+    border-width: 0 0px 15px 0;
+    transform: rotate(45deg);
+    left:0;
+    top:0;
+}
+.crossmark:before{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 60px;
+    height: 0px;
+    border: solid #E00;
+    border-width: 0 0px 15px 0;
+    transform: rotate(-45deg);
+    left:0;
+    top:0;
 }

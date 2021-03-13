@@ -165,6 +165,9 @@ var AllQuestionsFromQuiz =
     }
 };
 var questions = [];
+var correct = 0;
+var unanswered = 0;
+var timer;
 
 var languageContainer = document.getElementById('language-container');
 var questionContainer = document.getElementById('selector-container');
@@ -172,12 +175,15 @@ var questionText = document.getElementById('question-text');
 var option1 = document.getElementById('option-1-container');
 var option2 = document.getElementById('option-2-container');
 var option3 = document.getElementById('option-3-container');
+var option1Text = option1.getElementsByTagName('span')[0];
+var option2Text = option2.getElementsByTagName('span')[0];
+var option3Text = option3.getElementsByTagName('span')[0];
 var answer = document.getElementById('answer');
 
 document.addEventListener("keydown", KeyPressedHandler);
 
 function KeyPressedHandler(e) {
-    if (languageContainer.style.display == 'none') {
+    if (languageContainer.classList.contains('hide')) {
         resolveQuestion(e);
     } else {
         selectLanguage(e);
@@ -211,156 +217,177 @@ function selectLanguage(e) {
 }
 
 function launchQuiz(locale) {
-    var questions = shuffleQuestions(locale);
+    questions = shuffleQuestions(locale);
     hideSelector(languageContainer);
     showSelector(questionContainer);
-    showNextQuestion(questions);
+    showNextQuestion();
 }
 
 function shuffleQuestions(locale) {
     var sortedQuestions = [];
     var localeQuestions = AllQuestionsFromQuiz[locale];
-    shuffle(localeQuestions);
     for (var i in localeQuestions)
+    {
         sortedQuestions.push([i, localeQuestions[i]]);
+    }
+    // import AllQuestionsFromQuiz from './../quiz/questions.json';
+    questions = shuffle(sortedQuestions);
+    
     return sortedQuestions;
 
 }
 
 function hideSelector(selector) {
-    languageContainer.classname="hide";
+    selector.className = "hide";
+
 }
 
 function showSelector(selector) {
-    questionContainer.classname="flex";
+    selector.className = "flex";
 }
 
-function showNextQuestion(questions) {
-    console.log(questions);
-    var currentQuestion = questions.pop();
-    var question = currentQuestion[1];
-    var inquire = question['question'];
-    var choices = question['choices'];
-    var solution = question['answer'];
-
-    var inquireText = document.createTextNode(inquire);
-    var choice1Node = document.createTextNode(choices[1]);
-    var choice2Node = document.createTextNode(choices[2]);
-    var choice3Node = document.createTextNode(choices[3]);
-    var solutionNode = document.createTextNode(solution);
-    questionText.append(inquireText)
-    option1.append(choice1Node);
-    option2.append(choice2Node);
-    option3.append(choice3Node);
-    answer.append(solutionNode);
+function showNextQuestion() {
+    clearInterval(timer);
+    if (questions.length == 0) {
+        showResults()
+    } else {
+        var currentQuestion = questions.pop();
+        var question = currentQuestion[1];
+        var inquire = question['question'];
+        var choices = question['choices'];
+        var solution = question['answer'];
+        
+        var inquireText = document.createTextNode(inquire);
+        var choice1Node = document.createTextNode(choices[1]);
+        var choice2Node = document.createTextNode(choices[2]);
+        var choice3Node = document.createTextNode(choices[3]);
+        var solutionNode = document.createTextNode(solution);
+        questionText.append(inquireText)
+        option1Text.append(choice1Node);
+        option2Text.append(choice2Node);
+        option3Text.append(choice3Node);
+        answer.append(solutionNode);
+    }
+    countdownTimer()
 }
 
 function resolveQuestion(e) {
-    keyPressed = e.key;
-    correctAnswer = answer.childNodes[0].data;
+    unanswered = 0;
+    clearInterval(timer);
+
+    var correctFlag = false;
+    var keyPressed = e.key;
+    var correctAnswer = answer.childNodes[0].data;
     if (keyPressed == correctAnswer) {
         correct++;
-        //Mostrar opciones correcta e incorrecta
+        correctFlag = true;
     }
+
+    if (correctFlag) {
+        switch (keyPressed) {
+            case "1":
+                option1.classList.add("text-success");
+                option1.getElementsByClassName('round')[0].classList.add('checkmark');
+                option2.classList.add("text-muted");
+                option2.getElementsByClassName('round')[0].classList.add('muted');
+                option3.classList.add("text-muted");
+                option3.getElementsByClassName('round')[0].classList.add('muted');
+                break;
+            case "2":
+                option1.classList.add("text-muted");
+                option1.getElementsByClassName('round')[0].classList.add('muted');
+                option2.classList.add("text-success");
+                option2.getElementsByClassName('round')[0].classList.add('checkmark');
+                option3.classList.add("text-muted");
+                option3.getElementsByClassName('round')[0].classList.add('muted');
+                break;
+            case "3":
+                option1.classList.add("text-muted");
+                option1.getElementsByClassName('round')[0].classList.add('muted');
+                option2.classList.add("text-muted");
+                option2.getElementsByClassName('round')[0].classList.add('muted');
+                option3.classList.add("text-success");
+                option3.getElementsByClassName('round')[0].classList.add('checkmark');
+                break;
+        }
+    } else {
+        switch (keyPressed) {
+            case "1":
+                option1.classList.add("text-danger");
+                option1.getElementsByClassName('round')[0].classList.add('crossmark');
+                option2.classList.add("text-muted");
+                option2.getElementsByClassName('round')[0].classList.add('muted');
+                option3.classList.add("text-muted");
+                option3.getElementsByClassName('round')[0].classList.add('muted');
+                break;
+            case "2":
+                option1.classList.add("text-muted");
+                option1.getElementsByClassName('round')[0].classList.add('muted');
+                option2.classList.add("text-danger");
+                option2.getElementsByClassName('round')[0].classList.add('crossmark');
+                option3.classList.add("text-muted");
+                option3.getElementsByClassName('round')[0].classList.add('muted');
+                break;
+            case "3":
+                option1.classList.add("text-muted");
+                option1.getElementsByClassName('round')[0].classList.add('muted');
+                option2.classList.add("text-muted");
+                option2.getElementsByClassName('round')[0].classList.add('muted');
+                option3.classList.add("text-danger");
+                option3.getElementsByClassName('round')[0].classList.add('crossmark');
+                break;
+        }
+
+    }
+    sleep(500).then(() => clearQuestion());
+    sleep(500).then(() => showNextQuestion());
 }
 
+function clearQuestion() {
+    option1.classList.remove("text-muted", "text-success", "text-danger");
+    option2.classList.remove("text-muted", "text-success", "text-danger");
+    option3.classList.remove("text-muted", "text-success", "text-danger");
+    option1.getElementsByClassName('round')[0].classList.remove('muted', 'checkmark', 'crossmark');
+    option2.getElementsByClassName('round')[0].classList.remove('muted', 'checkmark', 'crossmark');
+    option3.getElementsByClassName('round')[0].classList.remove('muted', 'checkmark', 'crossmark');
+    option1Text.innerText = '';
+    option2Text.innerText = '';
+    option3Text.innerText = '';
+    questionText.innerText = '';
+    answer.innerText='';
+}
 
-
-// function quiz() {
-//     var output = [];
-//     shuffle(localeQuestions);
-
-//     questions.forEach((currentQuestion, questionNumber) => {
-//         var choices = [];
-//         for (letter in currentQuestion.choices) {
-
-//             choices.push(
-//                 `<label class="btn btn-primary border border-white border-4 rounded-pill w-100 text-start pl-3"><input type="radio" name="question${questionNumber}" value="${letter}">
-//                     <span class="customRadio"></span>
-//                         ${letter} :
-//                         ${currentQuestion.choices[letter]}
-//                 </label>`
-//             );
-//         }
-
-//         output.push(
-//             `<div class="slide">
-//                 <div class="question">${currentQuestion.question}</div>
-//                 <div class="choices">${choices.join("")}</div>
-//             </div>`
-//         );
-//     });
-//     quizContainer.innerHTML = output.join("");
-// }
-
-// function results() {
-
-//     var answerContainers = quizContainer.querySelectorAll(".choices");
-
-//     var numCorrect = 0;
-
-//     questions.forEach((currentQuestion, questionNumber) => {
-//         var answerContainer = answerContainers[questionNumber];
-//         var selector = `input[name=question${questionNumber}]:checked`;
-//         var userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-//         if (userAnswer === currentQuestion.answer) {
-//             numCorrect++;
-
-//             answerContainers[questionNumber].style.color = "rgb(0, 88, 4)";
-//         } else {
-//             answerContainers[questionNumber].style.color = "rgb(141, 0, 0)";
-//         }
-//     });
-
-//     resultsContainer.innerHTML = `${numCorrect} preguntas correctas de ${questions.length}`;
-// }
-
-// function showSlide(n) {
-//     slides[currentSlide].classList.remove("active-slide");
-//     slides[n].classList.add("active-slide");
-//     currentSlide = n;
-
-//     if (currentSlide === 0) {
-//         previousButton.style.display = "none";
-//     } else {
-//         previousButton.style.display = "inline-block";
-//     }
-
-//     if (currentSlide === slides.length - 1) {
-//         nextButton.style.display = "none";
-//         submitButton.style.display = "inline-block";
-//     } else {
-//         nextButton.style.display = "inline-block";
-//         submitButton.style.display = "none";
-//     }
-// }
-
-// var progressBar = document.getElementById("progress-bar");
-// var progressPercent = 0;
-
-// var quizContainer = document.getElementById("quiz");
-// var resultsContainer = document.getElementById("results");
-// var submitButton = document.getElementById("submit");
-
-// quiz();
-
-// var slides = document.querySelectorAll(".slide");
-// let currentSlide = 0;
-
-// showSlide(0);
-
-// submitButton.addEventListener("click", results);
-// previousButton.addEventListener("click", previousSlide);
-// nextButton.addEventListener("click", nextSlide);
-
-function shuffle(sourceArray) {
-    for (var i = 0; i < sourceArray.length - 1; i++) {
-        var j = i + Math.floor(Math.random() * (sourceArray.length - i));
-
-        var temp = sourceArray[j];
-        sourceArray[j] = sourceArray[i];
-        sourceArray[i] = temp;
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
     }
-    return sourceArray;
+    return a;
+}
+
+async function countdownTimer()
+{
+    if (unanswered >3) {
+        showResults();
+    }
+    timer = setInterval(() => {
+        sleep(500).then(() => clearQuestion());
+        sleep(500).then(() => showNextQuestion());
+        unanswered++;
+        showNextQuestion();
+    }, 5000);
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function showResults()
+{
+    var inquireText = document.createTextNode(correct);
+    questionText.append(inquireText);
+    sleep(1000).then(() => location.reload());
 }
