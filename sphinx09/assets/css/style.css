@@ -86,7 +86,7 @@ header {
 }
 
 .selection-wrapper .image>img {
-    object-fit: contain;
+    object-fit: cover;
     width: 35vw;
     height: 35vh;
 
