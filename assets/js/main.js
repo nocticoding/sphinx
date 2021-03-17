@@ -350,9 +350,11 @@ var choices = [];
 var correct = 0;
 var unanswered = 0;
 var timer;
+var keyPressedEventActive = false;
 
 var splashPage = document.getElementById('splash');
 var questionContainer = document.getElementById('selector-container');
+var selectionWrapper = document.getElementsByClassName('selection-wrapper')[0];
 var questionText = document.getElementById('question-text');
 
 var option1 = document.getElementById('option-1-container');
@@ -386,10 +388,12 @@ var answer = document.getElementById('answer');
 document.addEventListener("keydown", KeyPressedHandler);
 
 function KeyPressedHandler(e) {
-    if (splashPage.classList.contains('hide')) {
-        resolveQuestion(e);
-    } else {
-        selectLanguage(e);
+    if (!keyPressedEventActive) {
+        if (splashPage.classList.contains('hide')) {
+            resolveQuestion(e);
+        } else {
+            selectLanguage(e);
+        }
     }
 }
 
@@ -473,14 +477,18 @@ function showNextQuestion() {
         answer.append(solutionNode);
     }
     countdownTimer()
+    keyPressedEventActive = false;
 }
 
 function resolveQuestion(e) {
+    keyPressedEventActive = true;
     unanswered = 0;
     clearInterval(timer);
 
-    var correctFlag = false;
     var keyPressed = e.key;
+    if (answer.childNodes.length ==0) {
+        return null;
+    }
     var correctAnswer = answer.childNodes[0].data;
 
     if (keyPressed == correctAnswer) {
@@ -509,7 +517,6 @@ function resolveQuestion(e) {
     option3.getElementsByClassName('flip-card')[0].classList.add('hover');
     option4.getElementsByClassName('flip-card')[0].classList.add('hover');
 
-    console.log(choices);
 
     choice1BackPicture.src = choices[1]["backImage"] !== '' ? choices[1]["backImage"] : choices[1]["image"];
     choice2BackPicture.src = choices[2]["backImage"] !== '' ? choices[2]["backImage"] : choices[2]["image"];
@@ -532,6 +539,29 @@ function resolveQuestion(e) {
     option3ImageBack.append(choice3BackPicture);
     option4ImageBack.append(choice4BackPicture);
 
+    option1.classList.add('border','border-danger');
+    option2.classList.add('border','border-danger');
+    option3.classList.add('border','border-danger');
+    option4.classList.add('border','border-danger');
+
+    console.log(correctAnswer == 2);
+    switch(correctAnswer) {
+        case '1': option1.classList.remove('border-danger');
+        option1.classList.add('border-success');
+        break;
+        case '2': 
+        console.log('dentro');
+            option2.classList.remove('border-danger');
+            option2.classList.add('border-success');
+        break;
+        case '3': option3.classList.remove('border-danger');
+        option3.classList.add('border-success');
+        break;
+        case '4': option4.classList.remove('border-danger');
+        option4.classList.add('border-success');
+        break;
+    }
+    correctAnswer = '';
     sleep(4000).then(() => clearQuestion());
     sleep(4000).then(() => showNextQuestion());
 }
@@ -598,7 +628,30 @@ function sleep(ms) {
 }
 
 function showResults() {
-    var inquireText = document.createTextNode(correct);
-    questionText.append(inquireText);
-    sleep(1000).then(() => location.reload());
+    var resultContainer = document.getElementsByClassName('result-container')[0];
+    selectionWrapper.classList.add('hide');
+    selectionWrapper.classList.remove('flex');
+    
+    resultContainer.classList.remove('hide');
+    console.log(resultContainer.classList, questionContainer.classList);
+    var score = document.getElementById('score');
+    var congratulations = document.getElementById('congratulations');
+
+    if (correct==0) {
+        congratulationsMessage=  '¡Seguro que puedes hacerlo mejor!';
+    } else if (correct >=3) {
+        rcongratulationsMessage=  '¿A que te dan ganas de saber más sobre el visón europeo?';
+    } else if (correct >=7) {
+        congratulationsMessage=  'nada mal, aunque siempre puedes aprender un poco más';
+    } else if (correct >=10){
+        congratulationsMessage=  'impresionante, eres casi una eminencia';
+    }else {
+        congratulationsMessage=  '¿seguro que no eres un visón disfrazado?';
+    }
+    var congratulationsText = document.createTextNode(congratulationsMessage);
+    var inquireText = document.createTextNode('Has acertado: ' + correct + ' preguntas');
+
+    score.append(inquireText);
+    congratulations.append(congratulationsText);
+    sleep(3000).then(() => location.reload());
 }
