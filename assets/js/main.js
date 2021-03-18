@@ -193,7 +193,7 @@ var AllQuestionsFromQuiz =
             question: "¿Por qué crees que el visón americano es una amenaza para el europeo?.",
             choices: {
                 1: {
-                    "image": "",
+                    "image": "./assets/images/image01.jpeg",
                     "backImage": "./assets/images/image25b.jpeg",
                     "text": "El visón americano es más grande y más fuerte.",
                     "solution": "Eso le permite capturar presas más grandes y expulsar al visón europeo si se encuentra con uno."
@@ -264,7 +264,7 @@ var AllQuestionsFromQuiz =
                     "image": "./assets/images/image34a.jpeg",
                     "backImage": "./assets/images/image34b.jpeg",
                     "text": "Están formados por instalaciones muy grandes con varios machos y varias hembras.",
-                    "solution": "FLos visones europeos son muy territoriales y habría peleas continuas que perjudicarían la reproducción y podrían provocar la muerte de varios ejemplares "
+                    "solution": "Los visones europeos son muy territoriales y habría peleas continuas que perjudicarían la reproducción y podrían provocar la muerte de varios ejemplares "
                 },
                 3: {
                     "image": "./assets/images/image35a.jpeg",
@@ -367,6 +367,7 @@ var option2Text = option2.getElementsByTagName('span')[0];
 var option3Text = option3.getElementsByTagName('span')[0];
 var option4Text = option4.getElementsByTagName('span')[0];
 
+
 var option1Solution = option1.getElementsByClassName('solution-text')[0];
 var option2Solution = option2.getElementsByClassName('solution-text')[0];
 var option3Solution = option3.getElementsByClassName('solution-text')[0];
@@ -376,7 +377,6 @@ var option1ImageFront = option1.getElementsByClassName('image')[0];
 var option2ImageFront = option2.getElementsByClassName('image')[0];
 var option3ImageFront = option3.getElementsByClassName('image')[0];
 var option4ImageFront = option4.getElementsByClassName('image')[0];
-
 
 var option1ImageBack = option1.getElementsByClassName('image')[1];
 var option2ImageBack = option2.getElementsByClassName('image')[1];
@@ -407,6 +407,7 @@ function launchQuiz(locale) {
     questions = shuffleQuestions(locale);
     hideSelector(splashPage);
     showSelector(questionContainer);
+    fadeIn(questionContainer, 1000);
     showNextQuestion();
 }
 
@@ -424,15 +425,18 @@ function shuffleQuestions(locale) {
 }
 
 function hideSelector(selector) {
-    selector.className = "hide";
-
+    selector.classList.remove("flex");
+    selector.classList.add("hide");
 }
 
 function showSelector(selector) {
-    selector.className = "flex";
+    selector.classList.remove("hide");
+    selector.classList.add("flex");
 }
 
 function showNextQuestion() {
+    questionContainer.classList.remove('fadeOut', 'delay-1s')
+    questionContainer.classList.add('fadeIn', 'delay-1s');
     clearInterval(timer);
     if (questions.length == 0) {
         showResults()
@@ -474,6 +478,11 @@ function showNextQuestion() {
         option3ImageFront.append(choice3Picture);
         option4ImageFront.append(choice4Picture);
 
+        option1Text.classList.add(choice1Node !== '' ? 'background-text' : '');
+        option2Text.classList.add(choice2Node !== '' ? 'background-text' : '');
+        option3Text.classList.add(choice3Node !== '' ? 'background-text' : '');
+        option4Text.classList.add(choice4Node !== '' ? 'background-text' : '');
+
         answer.append(solutionNode);
     }
     countdownTimer()
@@ -500,6 +509,11 @@ function resolveQuestion(e) {
     option2Text.innerText = '';
     option3Text.innerText = '';
     option4Text.innerText = '';
+
+    option1Text.classList.remove('background-text');
+    option2Text.classList.remove('background-text');
+    option3Text.classList.remove('background-text');
+    option4Text.classList.remove('background-text');
 
     option1ImageFront.innerHTML = '';
     option2ImageFront.innerHTML = '';
@@ -539,38 +553,55 @@ function resolveQuestion(e) {
     option3ImageBack.append(choice3BackPicture);
     option4ImageBack.append(choice4BackPicture);
 
-    option1.classList.add('border','border-danger');
-    option2.classList.add('border','border-danger');
-    option3.classList.add('border','border-danger');
-    option4.classList.add('border','border-danger');
+    option1.classList.add('border','border-danger', 'bg-wrong');
+    option2.classList.add('border','border-danger', 'bg-wrong');
+    option3.classList.add('border','border-danger', 'bg-wrong');
+    option4.classList.add('border','border-danger', 'bg-wrong');
 
-    console.log(correctAnswer == 2);
+    option1Solution.classList.add('background-text');
+    option2Solution.classList.add('background-text');
+    option3Solution.classList.add('background-text');
+    option4Solution.classList.add('background-text');
+
     switch(correctAnswer) {
-        case '1': option1.classList.remove('border-danger');
-        option1.classList.add('border-success');
+        case '1': option1.classList.remove('border-danger', 'bg-wrong');
+        option1.classList.add('border-success', 'bg-correct');
         break;
         case '2': 
         console.log('dentro');
-            option2.classList.remove('border-danger');
-            option2.classList.add('border-success');
+            option2.classList.remove('border-danger', 'bg-wrong');
+            option2.classList.add('border-success', 'bg-correct');
         break;
-        case '3': option3.classList.remove('border-danger');
-        option3.classList.add('border-success');
+        case '3': option3.classList.remove('border-danger', 'bg-wrong');
+        option3.classList.add('border-success', 'bg-correct');
         break;
-        case '4': option4.classList.remove('border-danger');
-        option4.classList.add('border-success');
+        case '4': option4.classList.remove('border-danger', 'bg-wrong');
+        option4.classList.add('border-success', 'bg-correct');
         break;
     }
     correctAnswer = '';
-    sleep(4000).then(() => clearQuestion());
-    sleep(4000).then(() => showNextQuestion());
+    sleep(30000).then(() => clearQuestion());
+    sleep(30000).then(() => showNextQuestion());
 }
 
 function clearQuestion() {
-    option1.classList.remove("text-muted", "text-success", "text-danger");
-    option2.classList.remove("text-muted", "text-success", "text-danger");
-    option3.classList.remove("text-muted", "text-success", "text-danger");
+    fadeIn(questionContainer, 1000);
 
+    option1.classList.remove('border','border-danger', 'border-success', 'bg-correct', 'bg-wrong');
+    option2.classList.remove('border','border-danger', 'border-success', 'bg-correct', 'bg-wrong');
+    option3.classList.remove('border','border-danger', 'border-success', 'bg-correct', 'bg-wrong');
+    option4.classList.remove('border','border-danger', 'border-success', 'bg-correct', 'bg-wrong');
+
+    option1Solution.classList.remove('background-text');
+    option2Solution.classList.remove('background-text');
+    option3Solution.classList.remove('background-text');
+    option4Solution.classList.remove('background-text');
+
+    option1Text.classList.remove('background-text');
+    option2Text.classList.remove('background-text');
+    option3Text.classList.remove('background-text');
+    option4Text.classList.remove('background-text');
+    
     option1.getElementsByClassName('flip-card')[0].classList.remove('hover');
     option2.getElementsByClassName('flip-card')[0].classList.remove('hover');
     option3.getElementsByClassName('flip-card')[0].classList.remove('hover');
@@ -616,11 +647,12 @@ async function countdownTimer() {
         showResults();
     }
     timer = setInterval(() => {
-        sleep(500).then(() => clearQuestion());
-        sleep(500).then(() => showNextQuestion());
+        sleep(4000).then(() => clearQuestion());
+        sleep(4000).then(() => showNextQuestion());
         unanswered++;
-        showNextQuestion();
-    }, 5000);
+
+        
+    }, 15000);
 }
 
 function sleep(ms) {
@@ -629,18 +661,19 @@ function sleep(ms) {
 
 function showResults() {
     var resultContainer = document.getElementsByClassName('result-container')[0];
+    var congratulationsMessage = '';
     selectionWrapper.classList.add('hide');
     selectionWrapper.classList.remove('flex');
     
     resultContainer.classList.remove('hide');
-    console.log(resultContainer.classList, questionContainer.classList);
+
     var score = document.getElementById('score');
     var congratulations = document.getElementById('congratulations');
 
-    if (correct==0) {
+    if (correct<3) {
         congratulationsMessage=  '¡Seguro que puedes hacerlo mejor!';
     } else if (correct >=3) {
-        rcongratulationsMessage=  '¿A que te dan ganas de saber más sobre el visón europeo?';
+        congratulationsMessage=  '¿A que te dan ganas de saber más sobre el visón europeo?';
     } else if (correct >=7) {
         congratulationsMessage=  'nada mal, aunque siempre puedes aprender un poco más';
     } else if (correct >=10){
@@ -655,3 +688,16 @@ function showResults() {
     congratulations.append(congratulationsText);
     sleep(3000).then(() => location.reload());
 }
+function fadeIn(element, duration = 600) {
+    element.style.display = '';
+    element.style.opacity = 0;
+    var last = +new Date();
+    var tick = function() {
+      element.style.opacity = +element.style.opacity + (new Date() - last) / duration;
+      last = +new Date();
+      if (+element.style.opacity < 1) {
+        (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+      }
+    };
+    tick();
+  }

@@ -16,7 +16,7 @@
     --main-bg-color: #FFFBE5;
     --main-contrast-color: #FFC58E;
     --first-button-color: #E4EAAA;
-    --second-button-color: #B8C3E4;
+    --second-button-color: #b8e4c7;
     --third-button-color: #F7F6B7;
     --fourth-button-color: #F9CFE2;
     --main-font-color: #4D2817;
@@ -33,11 +33,11 @@
     display: flex;
 }
 
-.bg-success {
+.bg-correct {
     background-color: var(--second-button-color);
 }
 
-.bg-danger {
+.bg-wrong {
     background-color: var(--fourth-button-color);
 }
 
@@ -185,6 +185,13 @@ header {
     color: var(--main-font-color);
 }
 
+.flip-card-front span {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+
 
 .flip-card-back .image {
     backdrop-filter: 5px;
@@ -201,9 +208,14 @@ header {
 .solution-text {
     width: 100%;
     z-index: 100;
-    position: absolute;
-    top: 0;
-    left: 0;
+}
+
+.background-text {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background: white;
+    opacity: 0.75;
 }
 
 #option-1-container,
@@ -221,8 +233,8 @@ header {
 #option-3-container span,
 #option-4-container span {
     text-transform: initial;
-    margin-top: 1rem;
-    padding-top: 1rem;
+    /* margin-top: 1rem;
+    padding-top: 1rem; */
     color: var(--main-font-color);
 }
 
