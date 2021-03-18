@@ -6,10 +6,9 @@ Falta:
 * Obtener las preguntas y respuestas de un json externo
 * Mostrar modal con las respuestas
 * Extraer a configuración parámetros como el tiempo de respuesta, asignación de botones, etc
-* Implementar imágenes
 * Pasar css a Bootstrap
-* Suavizar las transiciones entre preguntas
 * Añadir botón de HOME
+* Añadir pulsación para pasar a la siguiente pregunta.
 * Añadir táctil -> más adelante.
 * Cambiar a ES6 e integrarlo en un react.
 
