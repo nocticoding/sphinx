@@ -194,25 +194,25 @@ var AllQuestionsFromQuiz =
             choices: {
                 1: {
                     "image": "./assets/images/image01.jpeg",
-                    "backImage": "./assets/images/image25b.jpeg",
+                    "backImage": "",
                     "text": "El visón americano es más grande y más fuerte.",
                     "solution": "Eso le permite capturar presas más grandes y expulsar al visón europeo si se encuentra con uno."
                 },
                 2: {
                     "image": "./assets/images/image26a.jpeg",
-                    "backImage": "./assets/images/image26b.jpeg",
+                    "backImage": "",
                     "text": "Porque el visón americano ve mucho mejor por la noche",
                     "solution": "Los dos ven igual de bien y pueden localizar a sus presas y orientarse con poca luz "
                 },
                 3: {
                     "image": "./assets/images/image27a.jpeg",
-                    "backImage": "./assets/images/image27b.jpeg",
+                    "backImage": "",
                     "text": "El visón americano tiene más crías en cada parto y es menos territorial.",
                     "solution": "Así la población crece muy rápidamente y se pueden  encontrar muchos visones americanos en un tramo pequeño del río"
                 },
                 4: {
                     "image": "./assets/images/image28a.jpeg",
-                    "backImage": "./assets/images/image28b.jpeg",
+                    "backImage": "",
                     "text": "El visón americano puede comer hierba si lo necesita para sobrevivir.",
                     "solution": "Las dos especies de visón son carnívoros. Ninguno de los dos se alimenta de vegetales."
                 }
@@ -225,25 +225,25 @@ var AllQuestionsFromQuiz =
             choices: {
                 1: {
                     "image": "./assets/images/image29a.jpeg",
-                    "backImage": "./assets/images/image29b.jpeg",
+                    "backImage": "",
                     "text": "Se colocan plataformas flotantes con huelleros de arcilla ",
                     "solution": "Los visones americanos pasan más tiempo en el agua que los europeos, se suelen subir a las plataformas y dejar sus huellas sobre ellas. Luego se capturan vivos en esas mismas plataformas con jaulas trampa para estar completamente seguros de que son visones americanos "
                 },
                 2: {
                     "image": "./assets/images/image30a.jpeg",
-                    "backImage": "./assets/images/image30b.jpeg",
+                    "backImage": "",
                     "text": "Se dedican horas a mirar desde un punto stratégico con buena visibilidad usando prismáticos",
                     "solution": "Se invertiría mucho tiempo y esfuerzo para conseguir localizar a cada visón."
                 },
                 3: {
                     "image": "./assets/images/image31a.jpeg",
-                    "backImage": "./assets/images/image31b.jpeg",
+                    "backImage": "",
                     "text": "Se sobrevuela con helicópteros los ríos en busca de los visones",
                     "solution": "Los visones son muy pequeños, durante el día permanecen escondidos y el ruido les asustaría."
                 },
                 4: {
                     "image": "./assets/images/image32a.jpeg",
-                    "backImage": "./assets/images/image32b.jpeg",
+                    "backImage": "",
                     "text": "A veces aparecen individuos atropellados, así que se habla con el servicio de guarderío",
                     "solution": "Los guardas tienen formación para saber identificar a los visones y recorren los diferentes territorios, por lo que pueden aportar información muy valiosa"
                 }
@@ -256,25 +256,25 @@ var AllQuestionsFromQuiz =
             choices: {
                 1: {
                     "image": "./assets/images/image33a.jpeg",
-                    "backImage": "./assets/images/image33b.jpeg",
+                    "backImage": "",
                     "text": "Son centros construidos a lo largo de un río, con diferentes recintos que incluye cada uno un fragmento de éste y con una pareja de visones en cada recinto.",
                     "solution": "Así es muy difícil controlar el recinto, crecidas del río, fugas de visones, reproducción, el estado de los ejemplares etc."
                 },
                 2: {
                     "image": "./assets/images/image34a.jpeg",
-                    "backImage": "./assets/images/image34b.jpeg",
+                    "backImage": "",
                     "text": "Están formados por instalaciones muy grandes con varios machos y varias hembras.",
                     "solution": "Los visones europeos son muy territoriales y habría peleas continuas que perjudicarían la reproducción y podrían provocar la muerte de varios ejemplares "
                 },
                 3: {
                     "image": "./assets/images/image35a.jpeg",
-                    "backImage": "./assets/images/image35b.jpeg",
+                    "backImage": "",
                     "text": "Se disponen instalaciones contiguas adaptadas a las necesidades de los visones, y se van moviendo de unas a otras dependiendo de las necesidades.",
                     "solution": "Los machos se juntan con las hembras en la época apropiada, se controla la reproducción, el estado de las crías y los adultos etc."
                 },
                 4: {
                     "image": "./assets/images/image36a.jpeg",
-                    "backImage": "./assets/images/image36b.jpeg",
+                    "backImage": "",
                     "text": "En jaulas pequeñas, contiguas la una a la otra",
                     "solution": "Así se crían los visones americanos porque se utilizan para la industria peletera desde hace muchos años, como las gallinas o los conejos en las granjas. Los visones europeos necesitan un ambiente más naturalizado"
                 }
@@ -287,25 +287,25 @@ var AllQuestionsFromQuiz =
             choices: {
                 1: {
                     "image": "./assets/images/image34b.jpeg",
-                    "backImage": "./assets/images/image37b.jpeg",
+                    "backImage": "",
                     "text": "Se liberan sin demasiada preparación, cuando han crecido lo suficiente para no depender de su madre",
                     "solution": "Si son liberados y no consiguen cazar y alimentarse pronto, se debilitarían y morirían de hambre en poco tiempo"
                 },
                 2: {
                     "image": "./assets/images/image38a.jpeg",
-                    "backImage": "./assets/images/image38b.jpeg",
+                    "backImage": "",
                     "text": "Se juntan primero en recintos más grandes en los que conviven con otros visones y aprenden a cazar fijándose en cómo lo hacen otros.",
                     "solution": "Los visones son muy territoriales. No aprenderían unos de otros, sino que pelearían entre ellos"
                 },
                 3: {
                     "image": "./assets/images/image39a.jpeg",
-                    "backImage": "./assets/images/image39b.jpeg",
+                    "backImage": "",
                     "text": "Se mantienen de forma individual en jaulones pre-suelta en los que utilizan su instinto para aprender a cazar presas que les suministran los cuidadores.",
                     "solution": "Se minimiza el contacto con las personas y se sueltan peces vivos, cangrejos etc para que practiquen la caza antes de ser liberados."
                 },
                 4: {
                     "image": "./assets/images/image40a.jpeg",
-                    "backImage": "./assets/images/image40b.jpeg",
+                    "backImage": "",
                     "text": "Se liberan cerca de poblaciones humanas, para que puedan acercarse a zonas donde hay restos de comida, por si no consiguen cazar",
                     "solution": "Cerca de poblaciones hay muchos peligros: gatos, erros, posibilidad de atropellos..."
                 }
@@ -318,25 +318,25 @@ var AllQuestionsFromQuiz =
             choices: {
                 1: {
                     "image": "./assets/images/image41a.jpeg",
-                    "backImage": "./assets/images/image41b.jpeg",
+                    "backImage": "",
                     "text": "Se colocan jaulas trampa para capturarlos cada cierto tiempo",
                     "solution": "Es muy importante saber si los esfuerzos dan  resultado y los visones sobreviven, o hay aspectos que hay que modificar.Hay que evitar molestarles en exceso y al final reconocerían las jaulas y decidirían no entrar en ellas."
                 },
                 2: {
                     "image": "./assets/images/image42a.jpeg",
-                    "backImage": "./assets/images/image42b.jpeg",
+                    "backImage": "",
                     "text": "No se controlan para evitar molestarlos",
                     "solution": "Felinos NO Los felinos llevan las uñas escondidas (salvo el guepardo) y sólo las sacan cuando las necesitan para cazar. Tienen el hocico corto y la cabeza redondeada"
                 },
                 3: {
                     "image": "./assets/images/image43a.jpeg",
-                    "backImage": "./assets/images/image43b.jpeg",
+                    "backImage": "",
                     "text": "Se les coloca un transmisor con un collar ",
                     "solution": "Esto permite saber dónde están sin interferir demasiado en su vida y localizarlos si han muerto."
                 },
                 4: {
                     "image": "./assets/images/image30a.jpeg",
-                    "backImage": "./assets/images/image44b.jpeg",
+                    "backImage": "",
                     "text": "Se les vigila buscándolos sólo con la ayuda de los prismáticos",
                     "solution": "Sería muy complicado. Ni siquiera sabríamos si se han ido o siguen en la zona en la que se liberaron."
                 }
@@ -349,6 +349,7 @@ var questions = [];
 var choices = [];
 var correct = 0;
 var unanswered = 0;
+var totalQuestionNumber = 0;
 var timer;
 var keyPressedEventActive = false;
 
@@ -356,6 +357,8 @@ var splashPage = document.getElementById('splash');
 var questionContainer = document.getElementById('selector-container');
 var selectionWrapper = document.getElementsByClassName('selection-wrapper')[0];
 var questionText = document.getElementById('question-text');
+var totalQuestion = document.getElementById('total-questions');
+var questionNumberInQuiz = document.getElementById('question-number');
 
 var option1 = document.getElementById('option-1-container');
 var option2 = document.getElementById('option-2-container');
@@ -366,7 +369,6 @@ var option1Text = option1.getElementsByTagName('span')[0];
 var option2Text = option2.getElementsByTagName('span')[0];
 var option3Text = option3.getElementsByTagName('span')[0];
 var option4Text = option4.getElementsByTagName('span')[0];
-
 
 var option1Solution = option1.getElementsByClassName('solution-text')[0];
 var option2Solution = option2.getElementsByClassName('solution-text')[0];
@@ -408,6 +410,7 @@ function launchQuiz(locale) {
     hideSelector(splashPage);
     showSelector(questionContainer);
     fadeIn(questionContainer, 1000);
+    totalQuestionNumber = questions.length;
     showNextQuestion();
 }
 
@@ -441,12 +444,18 @@ function showNextQuestion() {
     if (questions.length == 0) {
         showResults()
     } else {
+        totalQuestion.innerText='';
+        questionNumberInQuiz.innerText='';
+
         var currentQuestion = questions.pop();
         var question = currentQuestion[1];
         var inquire = question['question'];
         var solution = question['answer'];
         choices = question['choices'];
+        questionNumber = totalQuestionNumber - questions.length;
 
+        var questionOrder = document.createTextNode(questionNumber);
+        var totalQuestions = document.createTextNode(totalQuestionNumber);
         var inquireText = document.createTextNode(inquire);
         var choice1Picture = document.createElement('img');
         var choice2Picture = document.createElement('img');
@@ -478,6 +487,9 @@ function showNextQuestion() {
         option3ImageFront.append(choice3Picture);
         option4ImageFront.append(choice4Picture);
 
+        totalQuestion.append(totalQuestions);
+        questionNumberInQuiz.append(questionOrder);
+
         option1Text.classList.add(choice1Node !== '' ? 'background-text' : '');
         option2Text.classList.add(choice2Node !== '' ? 'background-text' : '');
         option3Text.classList.add(choice3Node !== '' ? 'background-text' : '');
@@ -493,9 +505,10 @@ function resolveQuestion(e) {
     keyPressedEventActive = true;
     unanswered = 0;
     clearInterval(timer);
+    removeProgressbar('progressbar');
 
     var keyPressed = e.key;
-    if (answer.childNodes.length ==0) {
+    if (answer.childNodes.length == 0) {
         return null;
     }
     var correctAnswer = answer.childNodes[0].data;
@@ -553,44 +566,41 @@ function resolveQuestion(e) {
     option3ImageBack.append(choice3BackPicture);
     option4ImageBack.append(choice4BackPicture);
 
-    option1.classList.add('border','border-danger', 'bg-wrong');
-    option2.classList.add('border','border-danger', 'bg-wrong');
-    option3.classList.add('border','border-danger', 'bg-wrong');
-    option4.classList.add('border','border-danger', 'bg-wrong');
-
     option1Solution.classList.add('background-text');
     option2Solution.classList.add('background-text');
     option3Solution.classList.add('background-text');
     option4Solution.classList.add('background-text');
 
-    switch(correctAnswer) {
-        case '1': option1.classList.remove('border-danger', 'bg-wrong');
-        option1.classList.add('border-success', 'bg-correct');
-        break;
-        case '2': 
-        console.log('dentro');
-            option2.classList.remove('border-danger', 'bg-wrong');
-            option2.classList.add('border-success', 'bg-correct');
-        break;
-        case '3': option3.classList.remove('border-danger', 'bg-wrong');
-        option3.classList.add('border-success', 'bg-correct');
-        break;
-        case '4': option4.classList.remove('border-danger', 'bg-wrong');
-        option4.classList.add('border-success', 'bg-correct');
-        break;
+    switch (correctAnswer) {
+        case '1':
+            option2.classList.add('fa','fa-times');
+            option3.classList.add('fa','fa-times');
+            option4.classList.add('fa','fa-times');
+            break;
+            case '2':
+            option1.classList.add('fa','fa-times');
+            option3.classList.add('fa','fa-times');
+            option4.classList.add('fa','fa-times');
+            break;
+            case '3':
+            option1.classList.add('fa','fa-times');
+            option2.classList.add('fa','fa-times');
+            option4.classList.add('fa','fa-times');
+            break;
+        case '4':
+            option1.classList.add('fa','fa-times');
+            option2.classList.add('fa','fa-times');
+            option3.classList.add('fa','fa-times');
+            break;
     }
     correctAnswer = '';
-    sleep(30000).then(() => clearQuestion());
-    sleep(30000).then(() => showNextQuestion());
+    sleep(15000).then(() => clearQuestion());
+    sleep(15000).then(() => showNextQuestion());
 }
 
 function clearQuestion() {
     fadeIn(questionContainer, 1000);
-
-    option1.classList.remove('border','border-danger', 'border-success', 'bg-correct', 'bg-wrong');
-    option2.classList.remove('border','border-danger', 'border-success', 'bg-correct', 'bg-wrong');
-    option3.classList.remove('border','border-danger', 'border-success', 'bg-correct', 'bg-wrong');
-    option4.classList.remove('border','border-danger', 'border-success', 'bg-correct', 'bg-wrong');
+    removeProgressbar('progressbar');
 
     option1Solution.classList.remove('background-text');
     option2Solution.classList.remove('background-text');
@@ -601,11 +611,16 @@ function clearQuestion() {
     option2Text.classList.remove('background-text');
     option3Text.classList.remove('background-text');
     option4Text.classList.remove('background-text');
-    
+
     option1.getElementsByClassName('flip-card')[0].classList.remove('hover');
     option2.getElementsByClassName('flip-card')[0].classList.remove('hover');
     option3.getElementsByClassName('flip-card')[0].classList.remove('hover');
     option4.getElementsByClassName('flip-card')[0].classList.remove('hover');
+
+    option1.classList.remove('fa','fa-times');
+    option2.classList.remove('fa','fa-times');
+    option3.classList.remove('fa','fa-times');
+    option4.classList.remove('fa','fa-times');
 
     option1Text.innerText = '';
     option2Text.innerText = '';
@@ -646,13 +661,14 @@ async function countdownTimer() {
     if (unanswered > 3) {
         showResults();
     }
+    createProgressbar('progressbar', '15s');
     timer = setInterval(() => {
-        sleep(4000).then(() => clearQuestion());
-        sleep(4000).then(() => showNextQuestion());
+        sleep(2000).then(() => clearQuestion());
+        sleep(2000).then(() => showNextQuestion());
         unanswered++;
 
-        
-    }, 15000);
+
+    }, 13000);
 }
 
 function sleep(ms) {
@@ -664,22 +680,22 @@ function showResults() {
     var congratulationsMessage = '';
     selectionWrapper.classList.add('hide');
     selectionWrapper.classList.remove('flex');
-    
+
     resultContainer.classList.remove('hide');
 
     var score = document.getElementById('score');
     var congratulations = document.getElementById('congratulations');
 
-    if (correct<3) {
-        congratulationsMessage=  '¡Seguro que puedes hacerlo mejor!';
-    } else if (correct >=3) {
-        congratulationsMessage=  '¿A que te dan ganas de saber más sobre el visón europeo?';
-    } else if (correct >=7) {
-        congratulationsMessage=  'nada mal, aunque siempre puedes aprender un poco más';
-    } else if (correct >=10){
-        congratulationsMessage=  'impresionante, eres casi una eminencia';
-    }else {
-        congratulationsMessage=  '¿seguro que no eres un visón disfrazado?';
+    if (correct < 3) {
+        congratulationsMessage = '¡Seguro que puedes hacerlo mejor!';
+    } else if (correct >= 3) {
+        congratulationsMessage = '¿A que te dan ganas de saber más sobre el visón europeo?';
+    } else if (correct >= 7) {
+        congratulationsMessage = 'nada mal, aunque siempre puedes aprender un poco más';
+    } else if (correct >= 10) {
+        congratulationsMessage = 'impresionante, eres casi una eminencia';
+    } else {
+        congratulationsMessage = '¿seguro que no eres un visón disfrazado?';
     }
     var congratulationsText = document.createTextNode(congratulationsMessage);
     var inquireText = document.createTextNode('Has acertado: ' + correct + ' preguntas');
@@ -692,12 +708,36 @@ function fadeIn(element, duration = 600) {
     element.style.display = '';
     element.style.opacity = 0;
     var last = +new Date();
-    var tick = function() {
-      element.style.opacity = +element.style.opacity + (new Date() - last) / duration;
-      last = +new Date();
-      if (+element.style.opacity < 1) {
-        (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
-      }
+    var tick = function () {
+        element.style.opacity = +element.style.opacity + (new Date() - last) / duration;
+        last = +new Date();
+        if (+element.style.opacity < 1) {
+            (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+        }
     };
     tick();
+}
+
+function createProgressbar(id, duration, callback) {
+    var progressbar = document.getElementById(id);
+    progressbar.className = 'progressbar';
+  
+    var progressbarinner = document.createElement('div');
+    progressbarinner.className = 'inner';
+  
+    progressbarinner.style.animationDuration = duration;
+  
+    if (typeof(callback) === 'function') {
+      progressbarinner.addEventListener('animationend', callback);
+    }
+  
+    progressbar.appendChild(progressbarinner);
+  
+    progressbarinner.style.animationPlayState = 'running';
+  }
+
+  function removeProgressbar(id) {
+    var progressbar = document.getElementById(id);
+    progressbar.innerHTML='';
+    progressbar.classList.remove('progressbar');
   }

@@ -23,9 +23,12 @@
         <div class="image-container">
             <img src="./assets/images/splash.jpg" alt="Visón Europeo">
         </div>
-        <div class="title">El Visón Europeo <br /><span>Pulsa cualquier botón para comenzar</span></div>
+        <div class="title">El Visón Europeo <br /><span>Acerca la mano a cualquier botón</span></div>
     </div>
     <div id="selector-container" class="animated hide">
+        <div id="question-number-wrapper">
+                Pregunta <span id="question-number"></span> de <span id="total-questions"></span>
+        </div>
         <div id="question-text"></div>
         <div class="selection-wrapper">
             <div id="option-1-container">
@@ -86,9 +89,10 @@
             <img src="" id="score-image"/>
             <div id="congratulations"></div>
             <div id="score"></div>
-            <div id="play-again">Pulsa cualquier tecla para volver a jugar</div>
+            <div id="play-again">Acerca la mano a cualquier botón para volver a jugar</div>
         </div>
     </div>
+    <div id="progressbar"></div>
     <script src="./assets/js/main.js"></script>
 </body>
 

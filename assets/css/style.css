@@ -15,10 +15,10 @@
 :root {
     --main-bg-color: #FFFBE5;
     --main-contrast-color: #FFC58E;
-    --first-button-color: #E4EAAA;
-    --second-button-color: #b8e4c7;
-    --third-button-color: #F7F6B7;
-    --fourth-button-color: #F9CFE2;
+    --first-button-color: #ff0000;
+    --second-button-color: #00ff00;
+    --third-button-color: #0000ff;
+    --fourth-button-color: #ffff00;
     --main-font-color: #4D2817;
     --subtitle-font-color: #21909A;
     --headings-font-family: 'AmaticSC', cursiva;
@@ -31,14 +31,6 @@
 
 .flex {
     display: flex;
-}
-
-.bg-correct {
-    background-color: var(--second-button-color);
-}
-
-.bg-wrong {
-    background-color: var(--fourth-button-color);
 }
 
 html {
@@ -146,9 +138,10 @@ header {
 
 .selection-wrapper .image>img {
     object-fit: contain;
-    width: 35vw;
-    height: 35vh;
-
+    width: 100%;
+    max-width: 35vw;
+    height: auto;
+    max-height: 34vh;
 }
 
 .flip-card {
@@ -192,10 +185,10 @@ header {
     left: 0;
 }
 
-
 .flip-card-back .image {
     backdrop-filter: 5px;
-    height: 35vh;
+    width: 100%;
+    max-width: 35vw;
     color: var(--main-font-color);
     transform: rotateY(180deg);
 }
@@ -208,6 +201,8 @@ header {
 .solution-text {
     width: 100%;
     z-index: 100;
+    position: absolute;
+    bottom: 0;
 }
 
 .background-text {
@@ -228,13 +223,27 @@ header {
     position: relative;
 }
 
+#option-1-container .flip-card {
+    border: 5px solid var(--first-button-color);
+}
+
+#option-2-container .flip-card {
+    border: 5px solid var(--second-button-color);
+}
+
+#option-3-container .flip-card {
+    border: 5px solid var(--third-button-color);
+}
+
+#option-4-container .flip-card {
+    border: 5px solid var(--fourth-button-color);
+}
+
 #option-1-container span,
 #option-2-container span,
 #option-3-container span,
 #option-4-container span {
     text-transform: initial;
-    /* margin-top: 1rem;
-    padding-top: 1rem; */
     color: var(--main-font-color);
 }
 
@@ -260,3 +269,37 @@ header {
     color: var(--main-font-color);
     margin-top: 2rem;
 }
+
+.progressbar {
+    width: 80%;
+    margin: 25px auto;
+    border: solid 1px #000;
+  }
+  .progressbar .inner {
+    height: 15px;
+    animation: progressbar-countdown;
+    animation-duration: 40s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    animation-timing-function: linear;
+  }
+  @keyframes progressbar-countdown {
+    0% {
+      width: 100%;
+      background: #0F0;
+    }
+    100% {
+      width: 0%;
+      background: #F00;
+    }
+  }
+
+  .fa-times::before {
+    content: "\f00d";
+    position: absolute;
+    color: red;
+    font-size: 20rem;
+    top: calc(17.5vh - 10rem);
+    bottom: calc(17.5vh - 10rem);
+  }
