@@ -35,31 +35,31 @@ var AllQuestionsFromQuiz =
         },
         1:
         {
-            question: "¿Serías capaz de distinguir entre estas huellas de patas delanteras, cuál es la que corresponde al visón europeo?",
+            question: "¿Serías capaz de distinguir entre estas huellas, cuál es la que corresponde al visón europeo?",
             choices: {
                 1: {
                     "image": "./assets/images/image05.png",
                     "backImage": "",
                     "text": "",
-                    "solution": "Huellas de visón europeo.  Longitud de unos 2 a 3 cm, con forma de “media estrella”, más ancha que larga, con los dedos muy separados. "
+                    "solution": "Huellas de visón europeo. Longitud de unos 2 a 3 cm, con forma de “media estrella”, más ancha que larga, con los dedos muy separados. "
                 },
                 2: {
                     "image": "./assets/images/image06.png",
                     "backImage": "",
                     "text": "",
-                    "solution": "Huellas de gato montés  Redondea. Las uñas no dejan marcas en el suelo porque son retráctiles. "
+                    "solution": "Huellas de gato montés. Redondeada. Las uñas no dejan marcas en el suelo porque son retráctiles. "
                 },
                 3: {
                     "image": "./assets/images/image07.png",
                     "backImage": "",
                     "text": "",
-                    "solution": "Huellas de zorro   Huella ovalada, más alargada que ancha. Las uñas dejan una marca en el suelo muy visible. "
+                    "solution": "Huellas de zorro. Huella ovalada, más alargada que ancha. Las uñas dejan una marca en el suelo muy visible. "
                 },
                 4: {
                     "image": "./assets/images/image08.png",
                     "backImage": "",
                     "text": "",
-                    "solution": "Huellas de nutria  De forma circular, de unos 6 cm de diámetro, con uñas muy poco marcadas. En ocasiones puede verse el dibujo que deja la membrana interdigital"
+                    "solution": "Huellas de nutria. De forma circular, de unos 6 cm de diámetro, con uñas muy poco marcadas. En ocasiones puede verse el dibujo que deja la membrana interdigital"
                 }
             },
             answer: 1

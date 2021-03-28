@@ -137,7 +137,7 @@ header {
 }
 
 .selection-wrapper .image>img {
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
     max-width: 35vw;
     height: auto;
@@ -211,6 +211,7 @@ header {
     justify-content: center;
     background: white;
     opacity: 0.75;
+    line-height: 1.5;
 }
 
 #option-1-container,
@@ -245,6 +246,9 @@ header {
 #option-4-container span {
     text-transform: initial;
     color: var(--main-font-color);
+    font-weight: normal;
+    font-family: var(--default-font-family);
+    font-size: 1.75rem;
 }
 
 .result-container {
@@ -299,7 +303,7 @@ header {
     content: "\f00d";
     position: absolute;
     color: red;
-    font-size: 20rem;
-    top: calc(17.5vh - 10rem);
-    bottom: calc(17.5vh - 10rem);
+    font-size: 7.5rem;
+    top: 0;
+    left: 2vw;
   }
