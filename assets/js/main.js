@@ -1,350 +1,42 @@
-var AllQuestionsFromQuiz =
-{
-    "es":
-    {
-        0:
-        {
-            question: "¿Cuál de estos animales es un visón europeo?",
-            choices: {
-                1: {
-                    "image": "./assets/images/image01.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Éste es un visón americano. Es una especie exótica, introducida desde Norteamérica por la industria peletera. Es más grande que el visón europeo, sólo encontramos el color blanco de la cara en el labio inferior y el tono del color del pelo es más variable, llegando a ser marrón oscuro a casi negro."
-                },
-                2: {
-                    "image": "./assets/images/image02.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Éste es un visón europeo. Es más pequeño que el visón americano, los labios superior e inferior son de color blanco y el pelaje es marrón chocolate."
-                },
-                3: {
-                    "image": "./assets/images/image03.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Éste es un turón. De tamaño parecido al del visón europeo. La cara presenta un “antifaz” blanco y una estrecha franja blanca también en las orejas. El pelaje de los costados, entre las patas delanteras y las traseras, tiene un tono más claro, de color amarillento. "
-                },
-                4: {
-                    "image": "./assets/images/image04.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Ésta es una nutria. De tamaño mucho más grande que el visón europeo, con cola larga y gruesa. El cuello tiene una mancha de color blanco sucio a modo de “babero”.  Con pelaje muy denso e impermeable."
-                }
-            },
-            answer: 2
-        },
-        1:
-        {
-            question: "¿Serías capaz de distinguir entre estas huellas, cuál es la que corresponde al visón europeo?",
-            choices: {
-                1: {
-                    "image": "./assets/images/image05.png",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Huellas de visón europeo. Longitud de unos 2 a 3 cm, con forma de “media estrella”, más ancha que larga, con los dedos muy separados. "
-                },
-                2: {
-                    "image": "./assets/images/image06.png",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Huellas de gato montés. Redondeada. Las uñas no dejan marcas en el suelo porque son retráctiles. "
-                },
-                3: {
-                    "image": "./assets/images/image07.png",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Huellas de zorro. Huella ovalada, más alargada que ancha. Las uñas dejan una marca en el suelo muy visible. "
-                },
-                4: {
-                    "image": "./assets/images/image08.png",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Huellas de nutria. De forma circular, de unos 6 cm de diámetro, con uñas muy poco marcadas. En ocasiones puede verse el dibujo que deja la membrana interdigital"
-                }
-            },
-            answer: 1
-        },
-        2:
-        {
-            question: "¿De estos mamíferos, cuál crees que es el más amenazado?",
-            choices: {
-                1: {
-                    "image": "./assets/images/image09.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Lince ibérico. Catalogado por UICN como en peligro de extinción.  NO ES EL MAMÍFERO MÁS AMENAZADO DE LOS QUE VES."
-                },
-                2: {
-                    "image": "./assets/images/image10.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Visón europeo.  Catalogado por UICN como en peligro crítico de extinción.  ES EL MAMÍFERO MÁS AMENAZADO DE LOS QUE VES"
-                },
-                3: {
-                    "image": "./assets/images/image11.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Oso pardo.  Aunque en España se encuentra en peligro de extinción, la catalogación UICN mediterránea lo contempla como vulnerable .  NO ES EL MAMÍFERO MÁS AMENAZADO DE LOS QUE VES"
-                },
-                4: {
-                    "image": "./assets/images/image12.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Desmán ibérico.  Catalogado por UICN como vulnerable NO ES EL MAMÍFERO MÁS AMENAZADO DE LOS QUE VES"
-                }
-            },
-            answer: 2
-        },
-        3:
-        {
-            question: "¿De estos hábitats, cuál crees que es el que preferiría para vivir un visón europeo?",
-            choices: {
-                1: {
-                    "image": "./assets/images/image13.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Ésta es una zona esteparia sin zonas con agua para encontrar alimento ni vegetación que permitiera al visón europeo esconderse."
-                },
-                2: {
-                    "image": "./assets/images/image14.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Aquí un visón europeo tiene disponible una zona con agua, pero no encontraría refugio porque falta vegetación en la ribera y tampoco encontraría comida porque en los ríos canalizados no sobreviven las presas del visón"
-                },
-                3: {
-                    "image": "./assets/images/image15.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Éste es un río sin canalizar, con agua suficiente y que discurre a una velocidad lenta, ideal para albergar presas. Además hay mucha vegetación para poder esconderse y tener a sus crías."
-                },
-                4: {
-                    "image": "./assets/images/image16.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Ésta es una zona de río con muchos rápidos. A los visones les costaría mucho esfuerzo nadar y encontrar comida."
-                }
-            },
-            answer: 3
-        },
-        4:
-        {
-            question: "¿A qué familia de mamíferos carnívoros crees que pertenece el visón europeo?",
-            choices: {
-                1: {
-                    "image": "./assets/images/image17.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Cánidos NO Los cánidos tienen las patas largas y delgadas, orejas grandes y puntiagudas y hocico largo y estrecho"
-                },
-                2: {
-                    "image": "./assets/images/image18.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Felinos NO Los felinos llevan las uñas escondidas (salvo el guepardo) y sólo las sacan cuando las necesitan para cazar. Tienen el hocico corto y la cabeza redondeada"
-                },
-                3: {
-                    "image": "./assets/images/image19.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Mustélidos ¡CORRECTO! Cuerpo alargado, patas cortas, morro alargado pero ancho y orejas pequeñas, como la nutria de la foto"
-                },
-                4: {
-                    "image": "./assets/images/image20.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Vivérridos NO Los vivérridos se parecen a los gatos, pero tienen el hocico muy alargado y sus uñas son semi-retráctiles"
-                }
-            },
-            answer: 3
-        },
-        5:
-        {
-            question: " ¿Cuál crees que es el método que se utiliza para capturar a los visones americanos que expulsan al visón europeo?",
-            choices: {
-                1: {
-                    "image": "./assets/images/image21.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Sería muy difícil capturar un visón de esta manera. Primero   habría que localizarlo en el río, son muy rápidos y nadan muy bien. "
-                },
-                2: {
-                    "image": "./assets/images/image22.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "A los visones americanos les gusta estar dentro del agua más que a los europeos. Se colocan unas jaulas trampa flotantes que capturan a los visones vivos"
-                },
-                3: {
-                    "image": "./assets/images/image23.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Jamás se le ocurriría a un amante de la naturaleza colocar un cepo. Provocan lesiones a los animales que quedan atrapados y no son selectivos, así que podría causar daño a cualquier animal e incluso a personas."
-                },
-                4: {
-                    "image": "./assets/images/image24.jpeg",
-                    "backImage": "",
-                    "text": "",
-                    "solution": "Éstas son redes de niebla que los científicos utilizan para capturar aves y realizar estudios."
-                }
-            },
-            answer: 2
-        },
-        6:
-        {
-            question: "¿Por qué crees que el visón americano es una amenaza para el europeo?.",
-            choices: {
-                1: {
-                    "image": "./assets/images/image01.jpeg",
-                    "backImage": "",
-                    "text": "El visón americano es más grande y más fuerte.",
-                    "solution": "Eso le permite capturar presas más grandes y expulsar al visón europeo si se encuentra con uno."
-                },
-                2: {
-                    "image": "./assets/images/image26a.jpeg",
-                    "backImage": "",
-                    "text": "Porque el visón americano ve mucho mejor por la noche",
-                    "solution": "Los dos ven igual de bien y pueden localizar a sus presas y orientarse con poca luz "
-                },
-                3: {
-                    "image": "./assets/images/image27a.jpeg",
-                    "backImage": "",
-                    "text": "El visón americano tiene más crías en cada parto y es menos territorial.",
-                    "solution": "Así la población crece muy rápidamente y se pueden  encontrar muchos visones americanos en un tramo pequeño del río"
-                },
-                4: {
-                    "image": "./assets/images/image28a.jpeg",
-                    "backImage": "",
-                    "text": "El visón americano puede comer hierba si lo necesita para sobrevivir.",
-                    "solution": "Las dos especies de visón son carnívoros. Ninguno de los dos se alimenta de vegetales."
-                }
-            },
-            answer: 1
-        },
-        7:
-        {
-            question: "¿Cómo podemos saber si en un río hay visones americanos?",
-            choices: {
-                1: {
-                    "image": "./assets/images/image29a.jpeg",
-                    "backImage": "",
-                    "text": "Se colocan plataformas flotantes con huelleros de arcilla ",
-                    "solution": "Los visones americanos pasan más tiempo en el agua que los europeos, se suelen subir a las plataformas y dejar sus huellas sobre ellas. Luego se capturan vivos en esas mismas plataformas con jaulas trampa para estar completamente seguros de que son visones americanos "
-                },
-                2: {
-                    "image": "./assets/images/image30a.jpeg",
-                    "backImage": "",
-                    "text": "Se dedican horas a mirar desde un punto stratégico con buena visibilidad usando prismáticos",
-                    "solution": "Se invertiría mucho tiempo y esfuerzo para conseguir localizar a cada visón."
-                },
-                3: {
-                    "image": "./assets/images/image31a.jpeg",
-                    "backImage": "",
-                    "text": "Se sobrevuela con helicópteros los ríos en busca de los visones",
-                    "solution": "Los visones son muy pequeños, durante el día permanecen escondidos y el ruido les asustaría."
-                },
-                4: {
-                    "image": "./assets/images/image32a.jpeg",
-                    "backImage": "",
-                    "text": "A veces aparecen individuos atropellados, así que se habla con el servicio de guarderío",
-                    "solution": "Los guardas tienen formación para saber identificar a los visones y recorren los diferentes territorios, por lo que pueden aportar información muy valiosa"
-                }
-            },
-            answer: 1
-        },
-        8:
-        {
-            question: "¿Sabes cómo son los centros en los que se reproducen los visones en cautividad?",
-            choices: {
-                1: {
-                    "image": "./assets/images/image33a.jpeg",
-                    "backImage": "",
-                    "text": "Son centros construidos a lo largo de un río, con diferentes recintos que incluye cada uno un fragmento de éste y con una pareja de visones en cada recinto.",
-                    "solution": "Así es muy difícil controlar el recinto, crecidas del río, fugas de visones, reproducción, el estado de los ejemplares etc."
-                },
-                2: {
-                    "image": "./assets/images/image34a.jpeg",
-                    "backImage": "",
-                    "text": "Están formados por instalaciones muy grandes con varios machos y varias hembras.",
-                    "solution": "Los visones europeos son muy territoriales y habría peleas continuas que perjudicarían la reproducción y podrían provocar la muerte de varios ejemplares "
-                },
-                3: {
-                    "image": "./assets/images/image35a.jpeg",
-                    "backImage": "",
-                    "text": "Se disponen instalaciones contiguas adaptadas a las necesidades de los visones, y se van moviendo de unas a otras dependiendo de las necesidades.",
-                    "solution": "Los machos se juntan con las hembras en la época apropiada, se controla la reproducción, el estado de las crías y los adultos etc."
-                },
-                4: {
-                    "image": "./assets/images/image36a.jpeg",
-                    "backImage": "",
-                    "text": "En jaulas pequeñas, contiguas la una a la otra",
-                    "solution": "Así se crían los visones americanos porque se utilizan para la industria peletera desde hace muchos años, como las gallinas o los conejos en las granjas. Los visones europeos necesitan un ambiente más naturalizado"
-                }
-            },
-            answer: 3
-        },
-        9:
-        {
-            question: "¿Cómo se preparan los visones europeos para su liberación?",
-            choices: {
-                1: {
-                    "image": "./assets/images/image34b.jpeg",
-                    "backImage": "",
-                    "text": "Se liberan sin demasiada preparación, cuando han crecido lo suficiente para no depender de su madre",
-                    "solution": "Si son liberados y no consiguen cazar y alimentarse pronto, se debilitarían y morirían de hambre en poco tiempo"
-                },
-                2: {
-                    "image": "./assets/images/image38a.jpeg",
-                    "backImage": "",
-                    "text": "Se juntan primero en recintos más grandes en los que conviven con otros visones y aprenden a cazar fijándose en cómo lo hacen otros.",
-                    "solution": "Los visones son muy territoriales. No aprenderían unos de otros, sino que pelearían entre ellos"
-                },
-                3: {
-                    "image": "./assets/images/image39a.jpeg",
-                    "backImage": "",
-                    "text": "Se mantienen de forma individual en jaulones pre-suelta en los que utilizan su instinto para aprender a cazar presas que les suministran los cuidadores.",
-                    "solution": "Se minimiza el contacto con las personas y se sueltan peces vivos, cangrejos etc para que practiquen la caza antes de ser liberados."
-                },
-                4: {
-                    "image": "./assets/images/image40a.jpeg",
-                    "backImage": "",
-                    "text": "Se liberan cerca de poblaciones humanas, para que puedan acercarse a zonas donde hay restos de comida, por si no consiguen cazar",
-                    "solution": "Cerca de poblaciones hay muchos peligros: gatos, erros, posibilidad de atropellos..."
-                }
-            },
-            answer: 3
-        },
-        10:
-        {
-            question: "¿Cómo se vigilan los visones europeos que han sido liberados?",
-            choices: {
-                1: {
-                    "image": "./assets/images/image41a.jpeg",
-                    "backImage": "",
-                    "text": "Se colocan jaulas trampa para capturarlos cada cierto tiempo",
-                    "solution": "Es muy importante saber si los esfuerzos dan  resultado y los visones sobreviven, o hay aspectos que hay que modificar.Hay que evitar molestarles en exceso y al final reconocerían las jaulas y decidirían no entrar en ellas."
-                },
-                2: {
-                    "image": "./assets/images/image42a.jpeg",
-                    "backImage": "",
-                    "text": "No se controlan para evitar molestarlos",
-                    "solution": "Felinos NO Los felinos llevan las uñas escondidas (salvo el guepardo) y sólo las sacan cuando las necesitan para cazar. Tienen el hocico corto y la cabeza redondeada"
-                },
-                3: {
-                    "image": "./assets/images/image43a.jpeg",
-                    "backImage": "",
-                    "text": "Se les coloca un transmisor con un collar ",
-                    "solution": "Esto permite saber dónde están sin interferir demasiado en su vida y localizarlos si han muerto."
-                },
-                4: {
-                    "image": "./assets/images/image30a.jpeg",
-                    "backImage": "",
-                    "text": "Se les vigila buscándolos sólo con la ayuda de los prismáticos",
-                    "solution": "Sería muy complicado. Ni siquiera sabríamos si se han ido o siguen en la zona en la que se liberaron."
-                }
-            },
-            answer: 3
+import config from './../../config.js';
+import optionSkeleton from '../templates/option-template.js';
+
+var questions;
+
+document.addEventListener("keydown", KeyPressedHandler);
+
+function KeyPressedHandler(e) {
+    if (!keyPressedEventActive) {
+        if (splashPage.classList.contains('hide')) {
+            resolveQuestion(e);
+        } else {
+            var locale = config.languages[e.key];
+            getQuestionsFromUrl(selectLocaleQuestions(locale));
+            console.log(this.questions);
         }
     }
-};
+}
+
+var getQuestionsFromUrl = (callback) => {
+var xhr = new XMLHttpRequest ();
+xhr.open ( "GET", config.question_list_url);
+xhr.onreadystatechange = () =>
+{
+  if ( xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200)
+  {
+    callback(JSON.parse(xhr.responseText));
+  }
+}
+xhr.send ();
+}
+
+var selectLocaleQuestions = (locale) => {
+    console.log(questions);
+}
+
+
+
+
 var questions = [];
 var choices = [];
 var correct = 0;
@@ -386,24 +78,6 @@ var option3ImageBack = option3.getElementsByClassName('image')[1];
 var option4ImageBack = option4.getElementsByClassName('image')[1];
 
 var answer = document.getElementById('answer');
-
-document.addEventListener("keydown", KeyPressedHandler);
-
-function KeyPressedHandler(e) {
-    if (!keyPressedEventActive) {
-        if (splashPage.classList.contains('hide')) {
-            resolveQuestion(e);
-        } else {
-            selectLanguage(e);
-        }
-    }
-}
-
-function selectLanguage(e) {
-    var locale = 'es';
-
-    launchQuiz(locale);
-}
 
 function launchQuiz(locale) {
     questions = shuffleQuestions(locale);
