@@ -54,8 +54,11 @@ header {
 }
 
 header img {
-    height: 230px;
-    width: auto;
+    height: auto;
+    width: 323px;
+    display: block;
+    position: relative;
+    left: calc(100% - 323px);
 }
 
 #language-container {
