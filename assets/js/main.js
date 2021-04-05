@@ -1137,7 +1137,7 @@ function resolveQuestion(e) {
 
     for (let index = 0; index <= $totalOptions; index++) {
             optionNumber = index+1;
-            $("#option-" + optionNumber + "-container").delay(2000).toggleClass(optionNumber== correctAnswer ?'fa fa-check correct ' : 'fa fa-times wrong');
+            $("#option-" + optionNumber + "-container").delay(2000).addClass(optionNumber== correctAnswer ?'fa fa-check correct ' : 'fa fa-times wrong');
     }
     $('#selector-container').delay(2000).fadeOut(1000, () => {
         clearQuestion();

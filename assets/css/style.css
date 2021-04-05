@@ -169,11 +169,14 @@ header img {
 
 #option-1-container.wrong,
 #option-2-container.wrong,
-#option-3-container.wrong,
+#option-3-container.wrong {
+    margin-left: 15px;
+}
+
 #option-1-container.correct,
 #option-2-container.correct,
 #option-3-container.correct {
-    margin-left: 15px;
+    margin-left: 5px;
 }
 
 #option-1-container span,
@@ -297,7 +300,6 @@ header img {
 
   .fa-times::before,
   .fa-check::before {
-    content: "\f00d";
     position: relative;
     color: white;
     left: 65px;
