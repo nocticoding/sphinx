@@ -802,19 +802,20 @@ var choices;
 var locale;
 var correct = 0;
 var unanswered = 0;
+var keyPressed = null;
 var keyPressedEventActive = false;
 var correctFlag = false;
 var $totalOptions = 0;
 let timePassed = 0;
 let timeLeft = config.TIME_LIMIT;
 let timerInterval = null;
+var count = 0;
 
 $(document).ready(function () {
     $('.fadeOnLoad').delay(2000).removeClass('hide').hide().fadeIn('slow');
 });
 
-document.addEventListener("keydown", KeyPressedHandler);
-
+$(document).one("keypress",KeyPressedHandler);
 function launchQuiz() {
     questions = questions.slice(0, config.TOTAL_QUESTIONS);
     $('#timer').toggleClass('hide');
@@ -834,10 +835,9 @@ function shuffleQuestions(locale) {
 }
 
 function unansweredQuestion() {
+    destroyTimer();
     unanswered++;
-
     if (unanswered > config.UNANSWERED_QUESTIONS_TOTAL) {
-        destroyTimer();
         endGame();
     } else {
         clearQuestion();
@@ -864,11 +864,12 @@ function showNextQuestion() {
     }
 
     $('#answer').append(currentQuestion.correctAnswer);
+    keyPressedEventActive = false;
+    $(document).one("keydown",KeyPressedHandler);
 }
 
 function resolveQuestion(e) {
     destroyTimer()
-    keyPressedEventActive = false;
     var keyPressed = e.key;
     unanswered = 0;
 
@@ -889,6 +890,11 @@ function resolveQuestion(e) {
             optionNumber = index+1;
             $("#option-" + optionNumber + "-container").delay(2000).addClass(optionNumber== correctAnswer ?'fa fa-check correct ' : 'fa fa-times wrong');
     }
+    if (keyPressed == correctAnswer) {
+        $('#right')[0].play();
+    } else {
+        $('#wrong')[0].play();
+    }
     $('#selector-container').delay(2000).fadeOut(1000, () => {
         clearQuestion();
         if (questions.length != 0) {
@@ -905,6 +911,7 @@ function showResults() {
     var textResult = '';
     var faceClass = '';
     if (result <= 0.33) {
+        $('#final')[0].play();
         textResult = results[locale][0];
         faceClass = 'newbie';
     } else if (result <= 0.66) {
@@ -913,6 +920,9 @@ function showResults() {
     } else if (result >= 0.67) {
         textResult = results[locale][2];
         faceClass = 'advanced';
+    }
+    if(result >=0.95) {
+        $('#fanfare')[0].play();
     }
     $('#solution-container').addClass(faceClass);
     $('#score').append(result * 100 + '%');
@@ -924,15 +934,15 @@ function showResults() {
 function KeyPressedHandler(e) {
     if (!keyPressedEventActive) {
         keyPressedEventActive = true;
+        keyPressed = e.key;
         if ($('#language-container.hide').length) {
             resolveQuestion(e);
         } else {
-            locale = config.LANGUAGES[e.key];
+            locale = config.LANGUAGES[keyPressed];
             shuffleQuestions(locale);
             launchQuiz();
             showNextQuestion();
         }
-        keyPressedEventActive = false;
     }
 }
 
@@ -1047,7 +1057,8 @@ function setCircleDasharray() {
 }
 
 function destroyTimer() {
-    clearInterval(timerInterval);
+    timeLeft = config.TIME_LIMIT;
     timePassed = 0;
+    clearInterval(timerInterval);
     $('#timer').empty();
 }

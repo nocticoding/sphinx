@@ -17,8 +17,8 @@
     --correct-answer-color: #3AAA35;
     --muted-answer: #878787;
     --wrong-answer: #E30613;
-    --title-font-size: 80px;
-    --subtitle-font-size:50px;
+    --title-font-size: 60px;
+    --subtitle-font-size:35px;
     --font-default: "BebasNeue";
     --font-subtitle: "DinPro";
     --subtitle-2-font-size: 26px;
@@ -37,6 +37,10 @@
 html {
     background-color: var(--main-bg-color);
     font-family: var(--font-default);
+    max-width: 1980px;
+    width:100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 body {
@@ -54,11 +58,11 @@ header {
 }
 
 header img {
-    height: auto;
+    height: 230px;
     width: 323px;
     display: block;
     position: relative;
-    left: calc(100% - 323px);
+    left: calc(100vw - 323px);
 }
 
 #language-container {
@@ -72,17 +76,19 @@ header img {
     color: var(--main-font-color);
     text-transform: uppercase;
     margin-top: 3rem;
-
 }
 
 #selector-container {
     flex-direction: column;
     width: 50vw;
     margin: 0 auto;
-    justify-content: center;
+    justify-content: space-between;
     align-content: center;
-    position: relative;
-    top: -75px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80vh;
 }
 
 .selection-wrapper {
@@ -90,6 +96,8 @@ header img {
     flex-direction: column;
     margin-left: 15%;
     max-width: 75%;
+    height: 50vh;
+    margin-bottom: 10vh;
 }
 
 .selection-wrapper>div {
@@ -306,6 +314,9 @@ header img {
     position: relative;
     color: white;
     left: 65px;
+  }
+  .fa-times::before {
+    left: 55px;
   }
 
   #face {
